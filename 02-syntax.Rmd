@@ -37,7 +37,6 @@ mean = @(x) sum(x)
 
 ## Spacing
 
-Put a space before and after `=` when naming arguments in function calls.
 Most infix operators (`==`, `+`, `-`, ` = `, etc.) are also surrounded by
 spaces, except those with relatively high precedence: `^`.
 
@@ -64,11 +63,12 @@ Place a space before `(`, except when it's part of a function call.
 
 ```{r, eval = FALSE}
 # Good
-if (debug) show(x)
+x + (y + z)
+x.^ (1:10)'
 plot(x, y)
 
 # Bad
-if(debug)show(x)
+x +(y + z)
 plot (x, y)
 ```
 
