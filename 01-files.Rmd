@@ -1,30 +1,30 @@
 # (PART) Analyses {-}
 
-# Files
+# Script Files
 
 ## Names
 
-File names should be meaningful and end in `.R`. Avoid using special characters 
+File names should be meaningful and end in `.m`. Avoid using special characters 
 in file names - stick with numbers, letters, `-`, and `_`.
 
 
     # Good
-    fit_models.R
-    utility_functions.R
+    fit_models.m
+    utility_functions.m
 
     # Bad
-    fit models.R
-    foo.r
-    stuff.r
+    fit models.M
+    foo.m
+    stuff.m
 
 If files should be run in a particular order, prefix them with numbers. If it 
 seems likely you'll have more than 10 files, left pad with zero:
 
-    00_download.R
-    01_explore.R
+    00_download.m
+    01_explore.m
     ...
-    09_model.R
-    10_visualize.R
+    09_model.m
+    10_visualize.m
 
 If you later realise that you've missed some steps, it's tempting to use `02a`, 
 `02b`, etc. However, I think it's generally better to bite the bullet and 
@@ -42,12 +42,17 @@ Use commented lines of `-` and `=` to break up your file into easily readable
 chunks.
 
 ```{r, eval = FALSE}
-# Load data ---------------------------
+% Load data ---------------------------
 
-# Plot data ---------------------------
+% Plot data ---------------------------
 ```
 
-If your script uses add-on packages, load them all at once at the very 
-beginning of the file. This is more transparent than sprinkling `library()` 
-calls throughout your code or having hidden dependencies that are loaded in a 
-startup file, such as `.Rprofile`.
+If your script relies on code outside of the current working directory (e.g. CoreLibrary packages), 
+modify the path at the beginning of the file. This is more transparent and reproducible than manually
+modifying the path in the matlab application. 
+
+# Functions and Classes
+
+## Names
+
+## Structure
