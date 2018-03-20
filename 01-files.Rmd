@@ -51,8 +51,3 @@ If your script relies on code outside of the current working directory (e.g. Cor
 modify the path at the beginning of the file. This is more transparent and reproducible than manually
 modifying the path in the matlab application. 
 
-# Functions and Classes
-
-## Names
-
-## Structure
