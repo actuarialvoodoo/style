@@ -7,13 +7,9 @@
 >
 > --- Phil Karlton
 
-Variable and function names should use only lowercase letters, numbers, and `_`. 
+Variable, function, and class names should use only lowercase letters, numbers, and `_`. 
 
-Use underscores (`_`) to separate words within a name. Base R uses dots in 
-function names (`contrib.url()`) and class names (`data.frame`), but it's 
-better to reserve dots exclusively for the S3 object system. In S3, methods are 
-given the name `function.class`; if you also use `.` in function and class 
-names you end up with confusing methods like `as.data.frame.data.frame()`.
+Use underscores (`_`) to separate words within a name. 
 
 Generally, variable names should be nouns and function names should be verbs. 
 Strive for names that are concise and meaningful (this is not easy!).
@@ -35,16 +31,15 @@ will cause confusion for the readers of your code.
 
 ```{r, eval = FALSE}
 # Bad
-T <- FALSE
-c <- 10
-mean <- function(x) sum(x)
+T = FALSE
+mean = @(x) sum(x)
 ```
 
 ## Spacing
 
 Put a space before and after `=` when naming arguments in function calls.
-Most infix operators (`==`, `+`, `-`, `<-`, etc.) are also surrounded by
-spaces, except those with relatively high precedence: `^`, `:`, `::`, and `:::`.
+Most infix operators (`==`, `+`, `-`, ` = `, etc.) are also surrounded by
+spaces, except those with relatively high precedence: `^`.
 
 Always put a space after a comma,
 and never before (just like in regular English).  Prefer parentheses over
@@ -52,18 +47,19 @@ irregular spacing to highlight operator precedence.
 
 ```{r, eval = FALSE}
 # Good
-average <- mean((feet / 12) + inches, na.rm = TRUE)
+average = mean((feet / 12) + inches, 'omitnan')
 sqrt(x^2 + y^2)
-x <- 1:10
-base::get
+x = 1:10
+my_struct.cool_property
 
 # Bad
-average<-mean(feet/12 + inches,na.rm=TRUE)
+average=mean(feet/12 + inches,na.rm=TRUE)
 sqrt(x ^ 2 + y ^ 2)
 x <- 1 : 10
-base :: get
+
 ```
 
+-- this section is too R specific
 Place a space before `(`, except when it's part of a function call.
 
 ```{r, eval = FALSE}
